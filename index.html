@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Floreo — Доставка цветов</title>
-  <!-- Спокойный пастельный стиль, без эмодзи -->
   <style>
     * {
       margin: 0;
@@ -14,7 +13,7 @@
 
     body {
       font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
-      background-color: #fbf9f6;  /* тёплый пастельный фон */
+      background-color: #fbf9f6;
       color: #3a3a3a;
       line-height: 1.5;
       display: flex;
@@ -22,9 +21,8 @@
       min-height: 100vh;
     }
 
-    /* ХЭДЕР — пастельный зелёный */
     header {
-      background-color: #d9e6d3;  /* мягкий шалфей */
+      background-color: #d9e6d3;
       padding: 1.2rem 2.5rem;
       border-bottom: 1px solid #c2d6bb;
     }
@@ -73,7 +71,6 @@
       color: #2e3d2a;
     }
 
-    /* MAIN — гибкий контейнер */
     main {
       flex: 1;
       max-width: 1300px;
@@ -82,7 +79,6 @@
       width: 100%;
     }
 
-    /* Стили для страниц — контент в пастельных блоках */
     .page-title {
       font-size: 2.5rem;
       font-weight: 300;
@@ -99,7 +95,6 @@
       max-width: 700px;
     }
 
-    /* Карточки товаров (главная) */
     .catalog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -108,8 +103,6 @@
     }
 
     .flower-card {
-      background: #ffffffda;
-      backdrop-filter: blur(2px);
       background: #fefcf8;
       border-radius: 24px;
       padding: 1.8rem 1.5rem 2rem;
@@ -127,17 +120,11 @@
     .card-img {
       height: 200px;
       width: 100%;
-      background-color: #f2ede4; /* пастельный фон для отсутствия картинок */
+      background-color: #f2ede4;
       border-radius: 18px;
       margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9aab90;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: linear-gradient(145deg, #f3efe8, #e8e0d6);
+      object-fit: cover;
+      display: block;
     }
 
     .flower-card h3 {
@@ -182,99 +169,14 @@
       color: #2f402a;
     }
 
-    /* Страница доставки / контакты */
-    .info-block {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-
-    .delivery-card {
-      background: #faf7f2;
-      padding: 2.2rem 2.5rem;
-      border-radius: 28px;
-      flex: 2;
-      min-width: 280px;
-      border: 1px solid #e2dbd0;
-    }
-
-    .delivery-card h2 {
-      font-weight: 350;
-      color: #4a5c46;
-      margin-bottom: 1.5rem;
-      font-size: 1.9rem;
-    }
-
-    .delivery-card p {
-      margin-bottom: 1.2rem;
-      color: #4f5e4a;
-    }
-
-    .delivery-card ul {
-      margin-left: 1.5rem;
-      margin-top: 1rem;
-      color: #3f4e3a;
-    }
-
-    .delivery-card li {
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-side {
-      flex: 1;
-      min-width: 240px;
-      background: #f3f0ea;
-      padding: 2.2rem 2rem;
-      border-radius: 28px;
-      border: 1px solid #dfd7cb;
-    }
-
-    .contact-side h3 {
-      font-weight: 400;
-      color: #4a5c46;
-      font-size: 1.6rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .contact-item {
-      margin-bottom: 1.2rem;
-      color: #44553e;
-    }
-
-    .contact-item .label {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #7a8b71;
-    }
-
-    .contact-item .value {
-      font-size: 1.2rem;
-    }
-
-    .btn-secondary {
-      background: #d9e6d3;
+    hr {
       border: none;
-      padding: 0.9rem 1.5rem;
-      border-radius: 50px;
-      color: #3d5236;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1.5rem;
-      width: 100%;
-      font-weight: 400;
-      transition: 0.15s;
-      border: 1px solid #bccdb2;
+      border-top: 1px solid #d6d0c2;
+      margin: 2rem 0;
     }
 
-    .btn-secondary:hover {
-      background: #cbdcc3;
-    }
-
-    /* FOOTER — нежный бежевый */
     footer {
-      background-color: #e7dfd2;  /* пастельный кремово-бежевый */
+      background-color: #e7dfd2;
       padding: 1.8rem 2.5rem;
       border-top: 1px solid #d6cdbc;
       margin-top: 1rem;
@@ -302,18 +204,6 @@
       color: #2f3e28;
     }
 
-    /* Утилиты */
-    .accent-text {
-      color: #6e8462;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #d6d0c2;
-      margin: 2rem 0;
-    }
-
-    /* Адаптив */
     @media (max-width: 700px) {
       .header-container {
         flex-direction: column;
@@ -341,106 +231,62 @@
     </div>
     <nav>
       <ul>
-        <!-- Активный класс подсвечивается на странице в зависимости от контекста, будет добавлен через JS позже для удобства -->
-        <li><a href="index.html" class="active" id="nav-home">Букеты</a></li>
-        <li><a href="delivery.html" id="nav-delivery">Доставка и контакты</a></li>
+        <li><a href="index.html" class="active">Букеты</a></li>
+        <li><a href="delivery.html">Доставка и контакты</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- === СТРАНИЦА 1: ГЛАВНАЯ / ПОКУПКА ЦВЕТОВ (БУКЕТЫ) === -->
-  <div id="page-home">
-    <h1 class="page-title">Свежие цветы с доставкой</h1>
-    <div class="subhead">Собраны вручную. Доставка по городу в день заказа.</div>
+  <h1 class="page-title">Свежие цветы с доставкой</h1>
+  <div class="subhead">Собраны вручную. Доставка по городу в день заказа.</div>
 
-    <div class="catalog-grid">
-      <!-- карточка 1 -->
-      <div class="flower-card">
-        <img src="images/1.webp" alt="Пионовидные розы" class="card-img">
-        <h3>Розы Пастель</h3>
-        <div class="flower-latin">Rosa 'Pastel Perfection'</div>
-        <div class="price">4 200 ₽</div>
-        <button class="btn-order" data-flower="Розы Пастель">Заказать</button>
-      </div>
-      <!-- карточка 2 -->
-      <div class="flower-card">
-        <div class="card-img">Гортензия</div>
-        <h3>Гортензия Лавандовая</h3>
-        <div class="flower-latin">Hydrangea macrophylla</div>
-        <div class="price">3 890 ₽</div>
-        <button class="btn-order" data-flower="Гортензия Лавандовая">Заказать</button>
-      </div>
-      <!-- карточка 3 -->
-      <div class="flower-card">
-        <div class="card-img">Тюльпаны</div>
-        <h3>Тюльпаны Крем</h3>
-        <div class="flower-latin">Tulipa 'Cream Up'</div>
-        <div class="price">2 450 ₽</div>
-        <button class="btn-order" data-flower="Тюльпаны Крем">Заказать</button>
-      </div>
-      <!-- карточка 4 -->
-      <div class="flower-card">
-        <div class="card-img">Эвкалипт и ранункулюсы</div>
-        <h3>Нежный микс</h3>
-        <div class="flower-latin">Ranunculus & Eucalyptus</div>
-        <div class="price">5 100 ₽</div>
-        <button class="btn-order" data-flower="Нежный микс">Заказать</button>
-      </div>
+  <div class="catalog-grid">
+    <!-- Карточка 1 -->
+    <div class="flower-card">
+      <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Розы Пастель" class="card-img">
+      <h3>Розы Пастель</h3>
+      <div class="flower-latin">Rosa 'Pastel Perfection'</div>
+      <div class="price">4 200 ₽</div>
+      <button class="btn-order" data-flower="Розы Пастель">Заказать</button>
     </div>
-
-    <hr>
-    <p style="color: #606e59; font-style: italic; padding-left: 0.5rem;">* Каждый букет упакован в крафт и пастельную ленту.</p>
-  </div>
-
-  <!-- === СТРАНИЦА 2: ДОСТАВКА И КОНТАКТЫ === -->
-  <div id="page-delivery" style="display: none;">
-    <h1 class="page-title">Доставка и условия</h1>
-    <div class="subhead">Бережно доставляем цветы по указанному адресу.</div>
-    
-    <div class="info-block">
-      <div class="delivery-card">
-        <h2>Как получить заказ</h2>
-        <p>Мы работаем ежедневно с 8:00 до 22:00. Доставка осуществляется в пределах города и ближайшего пригорода.</p>
-        <ul>
-          <li>Срочная доставка — в течение 2 часов (при оформлении до 18:00).</li>
-          <li>Бесплатная доставка при заказе от 5 000 рублей.</li>
-          <li>Возможен самовывоз из нашего шоурума (адрес ниже).</li>
-        </ul>
-        <p style="margin-top: 2rem;">Оплата: картой онлайн, наличными или переводом при получении.</p>
-      </div>
-      <div class="contact-side">
-        <h3>Контакты</h3>
-        <div class="contact-item">
-          <div class="label">Телефон</div>
-          <div class="value">+7 912 345 67 89</div>
-        </div>
-        <div class="contact-item">
-          <div class="label">Адрес</div>
-          <div class="value">Москва, Цветочный пер., 14</div>
-        </div>
-        <div class="contact-item">
-          <div class="label">Почта</div>
-          <div class="value">hello@floreo.ru</div>
-        </div>
-        <button class="btn-secondary" id="contactCallBtn">Позвонить (имитация)</button>
-        <p style="margin-top: 1.2rem; font-size: 0.85rem; color: #7b8d72;">Ответим в течение 10 минут</p>
-      </div>
+    <!-- Карточка 2 -->
+    <div class="flower-card">
+      <img src="https://images.pexels.com/photos/1458286/pexels-photo-1458286.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Гортензия Лавандовая" class="card-img">
+      <h3>Гортензия Лавандовая</h3>
+      <div class="flower-latin">Hydrangea macrophylla</div>
+      <div class="price">3 890 ₽</div>
+      <button class="btn-order" data-flower="Гортензия Лавандовая">Заказать</button>
     </div>
-    <!-- доп информация -->
-    <div style="margin-top: 3rem; padding: 1.2rem; background: #f7f3ec; border-radius: 24px; color: #4c6043;">
-      <p>Оформляя заказ на сайте, вы соглашаетесь с условиями возврата — свежесть цветов гарантирована в течение 5 дней.</p>
+    <!-- Карточка 3 -->
+    <div class="flower-card">
+      <img src="https://images.pexels.com/photos/4199590/pexels-photo-4199590.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Тюльпаны Крем" class="card-img">
+      <h3>Тюльпаны Крем</h3>
+      <div class="flower-latin">Tulipa 'Cream Up'</div>
+      <div class="price">2 450 ₽</div>
+      <button class="btn-order" data-flower="Тюльпаны Крем">Заказать</button>
+    </div>
+    <!-- Карточка 4 -->
+    <div class="flower-card">
+      <img src="https://images.pexels.com/photos/11333958/pexels-photo-11333958.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Нежный микс" class="card-img">
+      <h3>Нежный микс</h3>
+      <div class="flower-latin">Ranunculus & Eucalyptus</div>
+      <div class="price">5 100 ₽</div>
+      <button class="btn-order" data-flower="Нежный микс">Заказать</button>
     </div>
   </div>
+
+  <hr>
+  <p style="color: #606e59; font-style: italic; padding-left: 0.5rem;">* Каждый букет упакован в крафт и пастельную ленту.</p>
 </main>
 
 <footer>
   <div class="footer-content">
     <div>© 2026 Floreo. Пастельная гармония.</div>
     <div class="footer-links">
-      <a href="#" id="footerHomeLink">Главная</a>
-      <a href="#" id="footerDeliveryLink">Доставка</a>
+      <a href="index.html">Главная</a>
+      <a href="delivery.html">Доставка</a>
       <a href="#">Политика</a>
     </div>
   </div>
@@ -448,55 +294,6 @@
 
 <script>
   (function() {
-    // Простое SPA-переключение между двумя страницами (без перезагрузки)
-    const pageHome = document.getElementById('page-home');
-    const pageDelivery = document.getElementById('page-delivery');
-    
-    const navHome = document.getElementById('nav-home');
-    const navDelivery = document.getElementById('nav-delivery');
-    const footerHomeLink = document.getElementById('footerHomeLink');
-    const footerDeliveryLink = document.getElementById('footerDeliveryLink');
-
-    // Функция для установки активного состояния
-    function setActivePage(pageName) {
-      // скрываем/показываем страницы
-      if (pageName === 'home') {
-        pageHome.style.display = 'block';
-        pageDelivery.style.display = 'none';
-        navHome.classList.add('active');
-        navDelivery.classList.remove('active');
-      } else {
-        pageHome.style.display = 'none';
-        pageDelivery.style.display = 'block';
-        navHome.classList.remove('active');
-        navDelivery.classList.add('active');
-      }
-      // плавно наверх
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Обработчики навигации
-    navHome.addEventListener('click', (e) => {
-      e.preventDefault();
-      setActivePage('home');
-    });
-
-    navDelivery.addEventListener('click', (e) => {
-      e.preventDefault();
-      setActivePage('delivery');
-    });
-
-    footerHomeLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      setActivePage('home');
-    });
-
-    footerDeliveryLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      setActivePage('delivery');
-    });
-
-    // Кнопки заказа — имитация оформления (без эмодзи)
     const orderButtons = document.querySelectorAll('.btn-order');
     orderButtons.forEach(btn => {
       btn.addEventListener('click', function(e) {
@@ -504,35 +301,8 @@
         alert(`Вы добавили в корзину: ${flower}. Для завершения заказа перейдите в доставку.`);
       });
     });
-
-    // Кнопка "Позвонить" на странице доставки
-    const callBtn = document.getElementById('contactCallBtn');
-    if (callBtn) {
-      callBtn.addEventListener('click', function() {
-        alert('Имитация звонка: +7 912 345 67 89. Мы на связи с 8 до 22.');
-      });
-    }
-
-    // Подсветка активной страницы при прямой загрузке (если открыта index.html с хешем)
-    if (window.location.hash === '#delivery') {
-      setActivePage('delivery');
-    } else {
-      setActivePage('home');
-    }
-
-    // Меняем hash при переключении (опционально)
-    window.addEventListener('hashchange', function() {
-      if (location.hash === '#delivery') {
-        setActivePage('delivery');
-      } else {
-        setActivePage('home');
-      }
-    });
-
-    // синхронизация при клике по footer
   })();
 </script>
 
-<!-- Небольшое дополнение: чтобы навигация через хеш работала красиво -->
 </body>
 </html>
