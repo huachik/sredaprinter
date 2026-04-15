@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доставка и контакты — Floreo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+      background-color: #fbf9f6;
+      color: #3a3a3a;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #d9e6d3;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 1px solid #c2d6bb;
+    }
+
+    .header-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo a {
+      text-decoration: none;
+      font-size: 2.1rem;
+      font-weight: 350;
+      letter-spacing: 2px;
+      color: #4a5c46;
+      transition: color 0.2s;
+    }
+
+    .logo a:hover {
+      color: #2e3d2a;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #4e5e4a;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      border-bottom: 2px solid #8faa84;
+      color: #2e3d2a;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      width: 100%;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #4a5c46;
+      margin-bottom: 1.5rem;
+      border-left: 6px solid #c7d9c0;
+      padding-left: 1.5rem;
+    }
+
+    .subhead {
+      font-size: 1.2rem;
+      color: #5f6e5a;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+    }
+
+    .info-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .delivery-card {
+      background: #faf7f2;
+      padding: 2.2rem 2.5rem;
+      border-radius: 28px;
+      flex: 2;
+      min-width: 280px;
+      border: 1px solid #e2dbd0;
+    }
+
+    .delivery-card h2 {
+      font-weight: 350;
+      color: #4a5c46;
+      margin-bottom: 1.5rem;
+      font-size: 1.9rem;
+    }
+
+    .delivery-card p {
+      margin-bottom: 1.2rem;
+      color: #4f5e4a;
+    }
+
+    .delivery-card ul {
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+      color: #3f4e3a;
+    }
+
+    .delivery-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-side {
+      flex: 1;
+      min-width: 240px;
+      background: #f3f0ea;
+      padding: 2.2rem 2rem;
+      border-radius: 28px;
+      border: 1px solid #dfd7cb;
+    }
+
+    .contact-side h3 {
+      font-weight: 400;
+      color: #4a5c46;
+      font-size: 1.6rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-item {
+      margin-bottom: 1.2rem;
+      color: #44553e;
+    }
+
+    .contact-item .label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #7a8b71;
+    }
+
+    .contact-item .value {
+      font-size: 1.2rem;
+    }
+
+    .btn-secondary {
+      background: #d9e6d3;
+      border: none;
+      padding: 0.9rem 1.5rem;
+      border-radius: 50px;
+      color: #3d5236;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      width: 100%;
+      font-weight: 400;
+      transition: 0.15s;
+      border: 1px solid #bccdb2;
+    }
+
+    .btn-secondary:hover {
+      background: #cbdcc3;
+    }
+
+    footer {
+      background-color: #e7dfd2;
+      padding: 1.8rem 2.5rem;
+      border-top: 1px solid #d6cdbc;
+      margin-top: 1rem;
+    }
+
+    .footer-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: #5a6653;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #526347;
+      margin-left: 2rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #2f3e28;
+    }
+
+    @media (max-width: 700px) {
+      .header-container {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      nav ul {
+        gap: 1.8rem;
+      }
+      footer .footer-content {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .footer-links a {
+        margin: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html">FLOREO</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Букеты</a></li>
+        <li><a href="delivery.html" class="active">Доставка и контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">Доставка и условия</h1>
+  <div class="subhead">Бережно доставляем цветы по указанному адресу.</div>
+  
+  <div class="info-block">
+    <div class="delivery-card">
+      <h2>Как получить заказ</h2>
+      <p>Мы работаем ежедневно с 8:00 до 22:00. Доставка осуществляется в пределах города и ближайшего пригорода.</p>
+      <ul>
+        <li>Срочная доставка — в течение 2 часов (при оформлении до 18:00).</li>
+        <li>Бесплатная доставка при заказе от 5 000 рублей.</li>
+        <li>Возможен самовывоз из нашего шоурума (адрес ниже).</li>
+      </ul>
+      <p style="margin-top: 2rem;">Оплата: картой онлайн, наличными или переводом при получении.</p>
+    </div>
+    <div class="contact-side">
+      <h3>Контакты</h3>
+      <div class="contact-item">
+        <div class="label">Телефон</div>
+        <div class="value">+7 912 345 67 89</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Адрес</div>
+        <div class="value">Москва, Цветочный пер., 14</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Почта</div>
+        <div class="value">hello@floreo.ru</div>
+      </div>
+      <button class="btn-secondary" id="contactCallBtn">Позвонить (имитация)</button>
+      <p style="margin-top: 1.2rem; font-size: 0.85rem; color: #7b8d72;">Ответим в течение 10 минут</p>
+    </div>
+  </div>
+  <div style="margin-top: 3rem; padding: 1.2rem; background: #f7f3ec; border-radius: 24px; color: #4c6043;">
+    <p>Оформляя заказ на сайте, вы соглашаетесь с условиями возврата — свежесть цветов гарантирована в течение 5 дней.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div>© 2026 Floreo. Пастельная гармония.</div>
+    <div class="footer-links">
+      <a href="index.html">Главная</a>
+      <a href="delivery.html">Доставка</a>
+      <a href="#">Политика</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const callBtn = document.getElementById('contactCallBtn');
+    if (callBtn) {
+      callBtn.addEventListener('click', function() {
+        alert('Имитация звонка: +7 912 345 67 89. Мы на связи с 8 до 22.');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
